@@ -11,8 +11,8 @@
 ## 1. Identification du binôme et cadrage général
 
 * **Binôme :**
-  * **Étudiant 1 :** [Nom Prénom] — [Email universitaire / CNE]
-  * **Étudiant 2 :** [Nom Prénom] — [Email universitaire / CNE]
+  * **Étudiant 1 :** Namrani Ilyas
+  * **Étudiant 2 :** Attatou Youssef
 * **Rôle de l'équipe :** Équipe de recherche et d'ingénierie quantitative.
 * **Mission :** Concevoir une application Web interactive sous **Streamlit**, modulaire, reproductible et scientifiquement défendable, couvrant l'ensemble de la chaîne de valeur du trading quantitatif : de l'ingestion des données de marché à la simulation de trading (backtest et paper trading).
 
@@ -167,18 +167,3 @@ flowchart TD
     ├── figures/                   # Graphiques exportés pour l'évaluation
     └── final_report.pdf           # Rapport final de 12-18 pages (D10)
 ```
-
----
-
-## 8. Statut des 10 Livrables
-
-- [x] **D01 — Cadrage et dépôt :** README complet, identification, ticker QQQ, problématique B01, répartition et architecture.
-- [ ] **D02 — Données et audit :** Script de collecte, snapshots datés, dictionnaire des données et contrôles qualité.
-- [ ] **D03 — Économétrie de la moyenne :** Comparatif Naïf / ARIMA / SARIMA / SARIMAX et diagnostics.
-- [ ] **D04 — Module de risque :** Test ARCH-LM, calibration $\text{GARCH}(1,1)$, prévision de volatilité et VaR/ES.
-- [ ] **D05 — Machine Learning et Deep Learning :** Modèles Ridge, Random Forest/Boosting et MLP compact.
-- [ ] **D06 — Stratégie et backtest :** Moteur d'ordres, prise en compte des frais ($0{,}10\%$), métriques et analyse par régime.
-- [ ] **D07 — Application Web :** Interface Streamlit avec les 6 vues fonctionnelles et mode démo hors-ligne.
-- [ ] **D08 — Paper trading :** Journal d'ordres sur 5 séances réelles post-gel et état du portefeuille.
-- [ ] **D09 — Reproductibilité et tests :** Suite de tests `pytest`, configuration des seeds et `requirements.txt`.
-- [ ] **D10 — Rapport et défense :** Rapport final de 12 à 18 pages, synthèse exécutive et support de soutenance.
