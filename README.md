@@ -68,11 +68,11 @@
 
 Afin de garantir un avancement équilibré et une traçabilité complète des contributions, les tâches sont réparties comme suit :
 
-| Domaine / Rôle | Responsable | Livrables associés | Tâches principales |
-| :--- | :--- | :--- | :--- |
-| **Pôle Données, Économétrie & Risque** | **Étudiant 1** | **D02**, **D03**, **D04** | • Collecte, nettoyage et audit qualité des séries historiques QQQ & SPY.<br>• Modélisation économétrique : Baselines, ARIMA, SARIMA, SARIMAX avec SPY retardé.<br>• Module de risque : tests ARCH-LM, $\text{GARCH}(1,1)$, prévision de volatilité, VaR et Expected Shortfall.<br>• Développement des vues Streamlit associées : *01 Market Data* et *03 Risk Management*. |
-| **Pôle Machine Learning, Moteur & Simulation** | **Étudiant 2** | **D05**, **D06**, **D08** | • Modélisation avancée : Régression Ridge / Logistique, Random Forest / Gradient Boosting, MLP PyTorch.<br>• Conception du moteur de backtesting événementiel (frais, slippage, drawdown, Sharpe, turnover).<br>• Module de Paper Trading sur les séances réelles récentes avec journal d'ordres exportable.<br>• Développement des vues Streamlit associées : *02 Model Lab*, *04 Strategy*, *05 Backtesting* et *06 Paper Trading*. |
-| **Responsabilités partagées** | **Binôme (Ensemble)** | **D01**, **D07**, **D09**, **D10** | • Cadrage initial et architecture du dépôt (D01).<br>• Assemblage de l'application Streamlit `app.py` et mode démonstration (D07).<br>• Tests unitaires `pytest`, gestion des seeds et reproductibilité (D09).<br>• Rédaction du rapport de recherche (12-18 pages) et soutenance orale finale (D10). |
+| Domaine / Rôle | Responsable | Tâches principales |
+| :--- | :--- | :--- |
+| **Pôle Données, Économétrie & Risque** | **Étudiant 1** | • Collecte, nettoyage et audit qualité des séries historiques QQQ & SPY.<br>• Modélisation économétrique : Baselines, ARIMA, SARIMA, SARIMAX avec SPY retardé.<br>• Module de risque : tests ARCH-LM, $\text{GARCH}(1,1)$, prévision de volatilité, VaR et Expected Shortfall.<br>• Développement des vues Streamlit associées : *01 Market Data* et *03 Risk Management*. |
+| **Pôle Machine Learning, Moteur & Simulation** | **Étudiant 2* | **D05**, **D06**, **D08** | • Modélisation avancée : Régression Ridge / Logistique, Random Forest / Gradient Boosting, MLP PyTorch.<br>• Conception du moteur de backtesting événementiel (frais, slippage, drawdown, Sharpe, turnover).<br>• Module de Paper Trading sur les séances réelles récentes avec journal d'ordres exportable.<br>• Développement des vues Streamlit associées : *02 Model Lab*, *04 Strategy*, *05 Backtesting* et *06 Paper Trading*. |
+| **Responsabilités partagées** | **Binôme (Ensemble)** | • Cadrage initial et architecture du dépôt (D01).<br>• Assemblage de l'application Streamlit `app.py` et mode démonstration (D07).<br>• Tests unitaires `pytest`, gestion des seeds et reproductibilité (D09).<br>• Rédaction du rapport de recherche (12-18 pages) et soutenance orale finale (D10). |
 
 ---
 
@@ -117,53 +117,5 @@ flowchart TD
     end
 ```
 
----
 
-## 7. Arborescence prévisionnelle du dépôt
 
-```text
-.
-├── README.md                      # Document de cadrage initial (Livrable D01)
-├── requirements.txt               # Dépendances Python gelées
-├── .gitignore                     # Exclusion des fichiers temporaires, caches et secrets
-├── .env.example                   # Modèle de variables d'environnement (si besoin)
-├── app.py                         # Point d'entrée de l'application Web Streamlit
-│
-├── configs/                       # Fichiers de configuration et hyperparamètres gelés
-│   └── config.yaml
-│
-├── data/                          # Gestion des données locales
-│   ├── raw/                       # Snapshots bruts téléchargés (QQQ, SPY)
-│   ├── processed/                 # Séries temporelles nettoyées et enrichies
-│   └── README.md                  # Dictionnaire et provenance des variables (D02)
-│
-├── notebooks/                     # Expérimentations et preuves exploratoires
-│   ├── 01_data_audit.ipynb        # Audit et stationnarité des données (D02)
-│   ├── 02_econometrics.ipynb      # ARIMA, SARIMA, SARIMAX (D03)
-│   ├── 03_risk_garch.ipynb        # ARCH-LM, GARCH(1,1), VaR/ES (D04)
-│   └── 04_ml_dl_models.ipynb      # Modèles ML et Deep Learning MLP (D05)
-│
-├── src/                           # Code source modulaire de l'application
-│   ├── __init__.py
-│   ├── data.py                    # Ingestion et validation des données de marché
-│   ├── features.py                # Calcul des rendements et des indicateurs
-│   ├── models/                    # Entraînement et inférence des modèles
-│   │   ├── __init__.py
-│   │   ├── baselines.py
-│   │   ├── econometric.py
-│   │   └── machine_learning.py
-│   ├── risk.py                    # Calculs GARCH, VaR et Expected Shortfall
-│   ├── strategy.py                # Règles d'arbitrage et signaux de trading
-│   ├── backtest.py                # Moteur de simulation historique avec frais
-│   └── paper.py                   # Module de suivi en paper trading
-│
-├── tests/                         # Tests unitaires et d'intégrité (D09)
-│   ├── test_data.py
-│   ├── test_models.py
-│   ├── test_risk.py
-│   └── test_backtest.py
-│
-└── reports/                       # Résultats consolidés, figures et rapport
-    ├── figures/                   # Graphiques exportés pour l'évaluation
-    └── final_report.pdf           # Rapport final de 12-18 pages (D10)
-```
